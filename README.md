@@ -13,10 +13,10 @@ Across major tech news sources and feeds, she is already bombarded with news and
 But she really wants to catch anything relevant to the space AND her local ecosystem.  
 > Belfrics Begins Roll-out of African Bitcoin Exchanges in Kenya | news.bitcoin.com
 
-|               | anything      | crypto|
-| ------------- |:-------------:| :--- :|
-| **global**    |               |       |
-| **local**     |               |  This.|
+|               | anything      | crypto |
+| ------------- |:-------------:| :-----:|
+| **global**    |               |        |
+| **local**     |               | This.  |
 
 
 ### How it works
