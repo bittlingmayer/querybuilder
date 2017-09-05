@@ -1,5 +1,5 @@
 # querybuilder
-Build complex search queries
+Build complex search queries | [bittlingmayer.github.io/querybuilder/](https://bittlingmayer.github.io/querybuilder/)
 
 **querybuilder** lets you easily build complex search queries.  You can use these queries to discover relevant content in an efficient way, or plug them into [Google Alerts](https://www.google.com/alerts) to get relevant content as it happens.
 
