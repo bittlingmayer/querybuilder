@@ -12,6 +12,7 @@ Across major tech news sources and feeds, she is already bombarded with news and
 
 But she really wants to catch anything relevant to the space AND her local ecosystem.  
 > Belfrics Begins Roll-out of African Bitcoin Exchanges in Kenya | news.bitcoin.com
+> Bitcoin up more than 200% year over year | finance.nation.co.ke
 
 |               | anything      | crypto |
 | ------------- |:-------------:| :-----:|
@@ -25,34 +26,38 @@ But she really wants to catch anything relevant to the space AND her local ecosy
 
 querybuilder asks Ngina to define:
 
-1. (Optional) Global filter, if she wants to restrict her search to only certain parts of the internet, like top tech news sources, Crunchbase and AngelList, research papers or *.edu AND .org*.
+1. local.topic
+Local topic entities.  For example, news about a specific portfolio company in the crypto space, KenyaCoin, is always relevant to Ngina.
 
-2. Local entities - locations, people, languages companies, institutions, sources... - not necessarily in the crypto space.  For example *Nairobi*, *Mombasa*, *Swahili*, *Kenya*, *Kenyan*, *Kikuyu*, *site:techmoran.com*, *site:nation.co.ke*, *Technical University of Kenya*, *M-Pesa*, *BRCK*, *Safaricom*, *site:\*.ke*...
+2. global.topic  
+Topic entities - synonyms and subtopics.  For example *cryptocurrency*, *cryptocurrencies*, *crypto currency*, *crypto currencies*, *ICO*, *bitcoin*, *btc*, *ethereum*, *blockchain*, *mining pool*...
 
-3. Topic entities - synonyms and subtopics of crypto.  For example *cryptocurrency*, *cryptocurrencies*, *crypto currency*, *crypto currencies*, *ICO*, *bitcoin*, *btc*, *ethereum*, *blockchain*, *mining pool*...
+3. local.*  
+Local entities - locations, people, languages companies, institutions, sources... - not necessarily in the crypto space.  For example *Nairobi*, *Mombasa*, *Swahili*, *Kenya*, *Kenyan*, *Kikuyu*, *site:techmoran.com*, *site:nation.co.ke*, *Technical University of Kenya*, *M-Pesa*, *BRCK*, *Safaricom*, *site:\*.ke*...
 
-4. Local topic entities - for example, news about a specific portfolio company in the crypto space, KenyaCoin, is always relevant to Ngina.
+4. global*.  
+Optional global filters, for example if she wants to restrict her search to only certain parts of the internet, like top tech news sources, Crunchbase and AngelList, research papers or *.edu AND .org*.
 
 She can also add filters to exclude results with certain sites or keywords.  For example, the title or artist of a hit song that happens to include the word *crypto*.
 
 ### Output
 Using her definitions, querybuilder generates 4 queries:
 
-1. local topic
+1. local.topic
 > @KenyaCoin: Launching new features today! | twitter.com/kenyacoin
 
-2. local topic AND global filters
+2. local.topic AND global.*
 > A Founder's Journey: KenyaCoin | nytimes.com
 
-3. local AND topic
+3. local.* AND global.topic
 > The Promise of Cryptocurrencies | business.co.ke  
 > Nairobi's Rising Scene | news.bitcoin.com  
 > Satoshi Spotted in Kenya | techcrunch.com  
 
-4. local topic AND topic
+4. local.topic AND global.topic
 > Startup Profile: KenyaCoin | news.bitcoin.com
 
-In theory, only 1 and 3 catch everything.  But 2 and 4 are likely very high priority, and therefore it is useful to separate them out.
+In theory, only 1 and 3 catch everything.  But 2 is higher priority than 1, and 4 than 3, and therefore it can be useful to separate them out.
 
 
 ### See also
