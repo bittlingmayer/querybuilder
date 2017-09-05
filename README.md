@@ -11,7 +11,7 @@ Across major tech news sources and feeds, she is already bombarded with news and
 > Yesterday's “plastics” are today's crypto tokens | techcrunch.com
 
 But she really wants to catch anything relevant to the space AND her local ecosystem.  
-> Belfrics Begins Roll-out of African Bitcoin Exchanges in Kenya | news.bitcoin.com
+> Belfrics Begins Roll-out of African Bitcoin Exchanges in Kenya | news.bitcoin.com  
 > Bitcoin up more than 200% year over year | finance.nation.co.ke
 
 |               | anything      | crypto |
