@@ -19,9 +19,11 @@ But she really wants to catch anything relevant to the space AND her local ecosy
 | **local**     |               | This.  |
 
 
-### How it works
+## How it works
 
-querybuilder asks you to define:
+### Input
+
+querybuilder asks Ngina to define:
 
 1. (Optional) Global filter, if she wants to restrict her search to only certain parts of the internet, like top tech news sources, Crunchbase and AngelList, research papers or *.edu AND .org*.
 
@@ -33,7 +35,8 @@ querybuilder asks you to define:
 
 She can also add filters to exclude results with certain sites or keywords.  For example, the title or artist of a hit song that happens to include the word *crypto*.
 
-querybuilder generates 4 queries:
+### Output
+Using her definitions, querybuilder generates 4 queries:
 
 1. local topic
 > @KenyaCoin: Launching new features today! | twitter.com/kenyacoin
