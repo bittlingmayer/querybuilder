@@ -1,5 +1,135 @@
+<!DOCTYPE html>
+<style>
+	body	{width: 600px; margin: 20px auto; /* center */ padding: 20px;}
+</style>
 <html>
-  <body>
-    This is not a test. 2
-  </body>
+    <body>
+
+        <br>
+
+			<textarea id="local_topic" rows="20"
+									placeholder="local.topic:
+			DeepCode
+			Cognigy
+			DeepCube
+			CatchEye
+			site:da.inf.ethz.ch
+			..."></textarea>
+
+			<textarea id="global" rows="20"
+            placeholder="global.*:
+site:venturebeat.com
+site:wsj.com
+site:arxiv.org
+site:scholar.google.com
+Stanford
+Google
+site:*.ai
+site:*.io
+..."></textarea>
+
+		<textarea id="local" rows="20"
+            placeholder="local.*:
+site:*.ch
+Zurich
+Zürich
+Züri
+Zurigo
+Urs Hölzle
+Urs Holzle
+Severin Hacker
+Nadia Magnenat Thalmann
+Nadia Thalmann
+N Thalmann
+Angelika Steger
+A Steger
+ETH
+EPFL
+..."></textarea>
+
+		<br>
+
+		<textarea id="global_topic" rows="20"
+            placeholder="global.topic:
+machine learning
+artificial intelligence
+AI
+intelligence artificielle
+apprentissage par machine
+intelligenza artificiale
+apprendimento macchina
+maschinelles lernen
+künstliche intelligenz
+deep learning
+word embeddings
+..."></textarea>
+
+		<br>
+
+        <br><textarea id="filter" rows="10"
+            placeholder="filter:
+site:bild.de
+site:blick.ch
+site:facebook.com
+Elon Musk"></textarea><br>
+
+        <button type="button" onclick="build_all()">Build query</button><br>
+
+        <hr/><pre id="query1" style="word-wrap: break-word; white-space: pre-wrap;"></pre><br>
+
+        <hr/><pre id="query2" style="word-wrap: break-word; white-space: pre-wrap; color: grey;"></pre><br>
+
+        <hr/><pre id="query3" style="word-wrap: break-word; white-space: pre-wrap;"></pre><br>
+
+        <hr/><pre id="query4" style="word-wrap: break-word; white-space: pre-wrap; color: grey;"></pre><br>
+
+        <script>
+
+            function read(id) {
+                text = document.getElementById(id).value;
+                return text.split('\n');
+            }
+
+            function write(id, query) {
+                document.getElementById(id).innerHTML = query;
+            }
+
+            function format(group) {
+                window.console.log(group)
+                for (var i = 0; i < group.length; i++) {
+                    if (!group[i].startsWith("site:")) {
+                        group[i] = '"' + group[i] + '"';
+                    }
+                }
+                return "(" + group.join(" OR ") + ")";
+            }
+
+            function build(groups, filter_group) {
+                queries = []
+                for (var i = 0; i < groups.length; i++) {
+                    queries.push(format(groups[i]));
+                }
+								if (filter_group != "") {
+										queries.push("-" + format(filter_group));
+								}
+                return queries.join(" \n");
+            }
+
+            function build_all() {
+                query = build([read("local_topic")], read("filter"));
+                write("query1", query);
+
+                query = build([read("global"), read("local_topic")], read("filter"));
+                write("query2", query);
+
+                query = build([read("global_topic"), read("local")], read("filter"));
+                write("query3", query);
+
+                query = build([read("global_topic"), read("local_topic")], read("filter"));
+                write("query4", query);
+            }
+
+        </script>
+
+    </body>
 </html>
